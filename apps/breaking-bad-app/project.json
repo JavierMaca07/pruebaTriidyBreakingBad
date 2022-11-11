@@ -1,0 +1,94 @@
+{
+  "name": "breaking-bad-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/breaking-bad-app/src",
+  "prefix": "prueba-triidy",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/breaking-bad-app",
+        "index": "apps/breaking-bad-app/src/index.html",
+        "main": "apps/breaking-bad-app/src/main.ts",
+        "polyfills": "apps/breaking-bad-app/src/polyfills.ts",
+        "tsConfig": "apps/breaking-bad-app/tsconfig.app.json",
+        "assets": [
+          "apps/breaking-bad-app/src/favicon.ico",
+          "apps/breaking-bad-app/src/assets"
+        ],
+        "styles": ["apps/breaking-bad-app/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/breaking-bad-app/src/environments/environment.ts",
+              "with": "apps/breaking-bad-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "breaking-bad-app:build:production"
+        },
+        "development": {
+          "browserTarget": "breaking-bad-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "breaking-bad-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/breaking-bad-app/**/*.ts",
+          "apps/breaking-bad-app/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/breaking-bad-app/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
