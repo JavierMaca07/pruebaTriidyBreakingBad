@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="card-grid-container animate__animated animate__fadeInLeft" 
+         *ngIf="personajes.length">
+        <div class="container-tarjeta" *ngFor="let personaje of personajes">
+        <div class="card">
+            <div class="lt1">
+                <span>{{personaje.name | slice:0:2}}</span>
+            </div>
+            <div class="lt2">
+                <span>{{personaje.name | obtenerLetras }}</span>
+            </div>
+            <img [src]="personaje.img" onerror="this.src='./assets/img/no-image.jpg'" 
+                  class="card-img-top">
+            <div class="punto"></div>
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>{{personaje.name}}</mat-card-title>
+                    <mat-card-subtitle>{{personaje.nickname}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <p>Ocupación</p>
+                    <div class="icon-text">
+                        <mat-icon matSuffix>arrow_right</mat-icon>
+                        <span>{{personaje.occupation}}</span>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    
+  </div>
+</div>

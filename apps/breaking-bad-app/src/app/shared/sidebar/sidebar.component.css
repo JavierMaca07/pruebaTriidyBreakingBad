@@ -1,0 +1,86 @@
+.img-logo {
+  position: relative;
+  left: 10%;
+  top: 10%;
+  width: 50%;
+  height: 80%;
+}
+
+img {
+  width: 130px;
+  margin-bottom: 5%;
+}
+
+.container-radio {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  margin: 0 0 12px;
+  align-items: flex-start;
+}
+
+input[type="radio"] {
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  background-clip: content-box;
+  border: 2px solid #bbbbbb;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+  margin: 0;
+}
+input[type="checkbox"] {
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  background-clip: content-box;
+  border: 2px solid #bbbbbb;
+  background-color: #e7e6e7;
+  margin: 0;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--green-bg-color);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--green-bg-color);
+}
+
+
+button {
+  background-color: var(--green-bg-color);
+  color: white;
+  width: 90%;
+}
+
+/* css material */
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.example-section {
+  margin: 12px 0;
+ 
+}
+
+.p-checks{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}

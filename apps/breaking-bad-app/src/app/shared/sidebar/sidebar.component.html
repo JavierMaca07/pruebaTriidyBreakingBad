@@ -1,0 +1,78 @@
+<div class="border-rigth p-3" id="sidebar">
+
+    <div class="row">
+        <div class="col">
+            <img class="rounded" src="../../../assets/img/breaking-bad-logo.png">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col">
+
+            <form [formGroup]="formulario" (submit)="buscar()" autocomplete="off">
+                <mat-form-field appearance="outline">
+                    <mat-label>Search</mat-label>
+                    <mat-icon matPrefix>search</mat-icon>
+                    <input type="text" autocomplete="off" placeholder="Buscar..." aria-label="number" matInput
+                        formControlName="name">
+                </mat-form-field>
+
+                <div class="row">
+                    <label>Category</label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group">
+                        <div class="container-radio">
+                            <input type="radio" value="Breaking Bad" formControlName="category" id="radio1">
+                            <label for="radio1">
+                                Breaking Bad
+                            </label>
+                        </div>
+                        <div class="container-radio">
+                            <input type="radio" value="Better Call Saul" formControlName="category" id="radio2">
+                            <label for="radio2">
+                                Better Call Saul
+                            </label>
+                        </div>
+                    </mat-radio-group>
+                </div>
+
+                <div class="row">
+                    <label>Status</label>
+                    <section class="example-section">
+                        <p class="p-checks">
+                            <input class="form-check-input" 
+                                    type="checkbox" 
+                                    id="flexCheckChecked1" 
+                                    value="Alive"
+                                    formControlName="status">
+                            <label class="form-check-label" for="flexCheckChecked1">
+                                Alive
+                            </label>
+                        </p>
+                        <p class="p-checks">
+                            <input class="form-check-input" 
+                                    type="checkbox" 
+                                    id="flexCheckChecked2" 
+                                    value="Deceased"
+                                    formControlName="status">
+                            <label class="form-check-label" for="flexCheckChecked2">
+                                Deceased
+                            </label>
+                        </p>
+                    </section>
+                </div>
+                <div class="col mb-2">
+                    <button [disabled]="isDisableButtonClear" 
+                            mat-raised-button 
+                            type="submit"
+                            >SEARCH</button>
+                </div>
+                <div class="col">
+                    <button mat-raised-button type="button" (click)="limpiar()"
+                        [disabled]="isDisableButtonClear">CLEAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+.length-results {
+    background-color: var(--green-bg-color);
+    height: 11.5em;
+}
+
+h2 {
+    margin: 3% auto auto 2%;
+    color: white;
+}
+
+.container-tarjet {
+    padding: 1%;
+}
+
+.container-spinner {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+label {
+    font-size: large;
+    color: var(--green-bg-color);
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.text-no-info {
+    font-size: large;
+    color: var(--green-bg-color);
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.container-spinner ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: var(--green-bg-color);
+}

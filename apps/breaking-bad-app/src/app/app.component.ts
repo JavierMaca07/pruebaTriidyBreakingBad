@@ -1,7 +1,8 @@
+/* eslint-disable @angular-eslint/component-selector */
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'prueba-triidy-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

@@ -1,0 +1,28 @@
+<div class="container home">
+
+    <div class="row length-results">
+        <div class="col">
+            <h2>{{listadoPersonajes.length}} Results</h2>
+            <br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <app-tarjeta-personaje [personajes]="listadoPersonajes"></app-tarjeta-personaje>
+        </div>
+    </div>
+
+    <div *ngIf="!listadoPersonajes.length && !showLabel" class="container-spinner mt-5">
+        <mat-spinner></mat-spinner>
+        <label>Cargando...</label>
+    </div>
+
+    <div class="mt-3">
+        <label class="text-no-info" *ngIf="showLabel">
+        No hay información relacionada con la busqueda!
+        </label>
+    </div>
+
+    
+</div>
